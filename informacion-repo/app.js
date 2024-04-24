@@ -7,7 +7,7 @@
 
 const fetchQuote = async() => {
     const apiGithub = 'https://api.github.com'; // fetch de la api
-    const userName = 'tossko'; // obtener del input
+    const userName = 'LuQi25'; // obtener del input
     // fetch(`https://api.github.com/users/${userName}`)
 
     fetch(`${apiGithub}/users/${userName}`)
@@ -15,11 +15,22 @@ const fetchQuote = async() => {
                 return data.json()
             })
             .then( si =>{
-                console.log('El usuario es ', si);
+                console.log('El usuario es ', si.login);
             })
             .catch(noRespuesta =>{
                 console.log('No se obtuvo la solicitud', noRespuesta);
             });
+
+    fetch(`${apiGithub}/users/${userName}/repos`)
+        .then(data => {
+            return data.json()
+        })
+        .then( si =>{
+            console.log('El repositorio es ', si);
+        })
+        .catch(noRespuesta =>{
+            console.log('No se obtuvo la solicitud', noRespuesta);
+        });
     
 
 }
