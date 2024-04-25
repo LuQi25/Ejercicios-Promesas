@@ -1,36 +1,33 @@
 
 // timeout para una promesa
 
-
-
-
+// primera promesa
 const promesaOriginal = () => new Promise ( resolve => {
     setTimeout(()=>{
         resolve('Promesa original terminada');
-    }, 700);
+    }, 400);
 });
 
+// segunda promesa timeout
 const timeoutPromise = () => new Promise (( originalPromise, maxTime ) => {
     setTimeout(() => {
-        originalPromise('No termino la promesa original');
+        originalPromise('No ha terminado la promesa original');
     }, maxTime = 500);
 })
 
 Promise.race([
     promesaOriginal(),
-    // intento temp para timeout
-    // basado en un ejercicio online
-    // new Promise ((resolve, reject) => {
+    // temp para timeout
+    new Promise ((resolve, reject) => {
 
-    //     setTimeout(()=>{
+        setTimeout(()=>{
 
-    //         reject('Se acabo el tiempo');
+            reject('Se acabo el tiempo');
 
-    //     }, 2000)
+        }, 2000)
         
-    // }),
+    }),
     timeoutPromise(),
-])
-.then((result) => {
+]).then((result) => {
     console.log( result );
 });
