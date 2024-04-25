@@ -11,7 +11,7 @@ const mostrarInfo = (infoEsencial) =>{
     console.log('Ubicación:', infoEsencial.direccion);
 }
 
-// datos simulando a una api
+// datos 
 const getUserInfo = ( username, callback ) => {
 
     setTimeout(()=>{  
