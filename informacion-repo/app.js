@@ -23,7 +23,7 @@ const fetchQuote = async() => {
     //
 
     // Obtener repositorios
-    fetch(`${apiGithub}/users/${userName}/repos`) // url de la api
+    fetch(`${apiGithub}/users/${userName}/repos`) // url api
         .then(check => {
             if (!check.ok) { // si no se encuentra un repo de ese usuario
                 console.log('No se encuentran los repositorios');

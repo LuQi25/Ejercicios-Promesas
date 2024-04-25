@@ -8,7 +8,7 @@ const promesaOriginal = () => new Promise ( resolve => {
     }, 400);
 });
 
-// segunda promesa timeout
+// segunda promesa del timeout
 const timeoutPromise = () => new Promise (( originalPromise, maxTime ) => {
     setTimeout(() => {
         originalPromise('No ha terminado la promesa original');
